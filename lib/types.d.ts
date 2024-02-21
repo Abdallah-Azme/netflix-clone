@@ -20,7 +20,7 @@ export type Movie = {
 export type Genre = {
   id: number;
   name: string;
-  movies: Movie[];
+  move: Movie[];
 };
 
 export type Video = {

@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button";
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import Container from "@/components/commen/Container";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import MovieModal from "@/components/Category/MovieModal";
 export default function HeroCard({ movie }: { movie: Movie }) {
-  console.log(movie);
   return (
     <>
       <div className="flex flex-col px-10 pt-20 gap-10 max-w-xl">
@@ -26,12 +27,19 @@ export default function HeroCard({ movie }: { movie: Movie }) {
         </h1>
         <p className="text-base text-white max-w-80">{movie?.overview}</p>
         <div className=" flex gap-3">
-          <Button className="px-6 py-6">
-            <PlayCircleOutlineIcon /> Play now
-          </Button>
-          <Button className="px-6 py-6">
-            <InfoOutlinedIcon /> More info
-          </Button>
+          <Dialog>
+            <DialogTrigger>
+              <Button className="px-6 py-6 mr-10">
+                <PlayCircleOutlineIcon /> Play now
+              </Button>
+              <Button className="px-6 py-6">
+                <InfoOutlinedIcon /> More info
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="w-[500px] h-[500px] md:h-[750px] md:w-[750px]">
+              <MovieModal movie={movie} />
+            </DialogContent>
+          </Dialog>
         </div>
       </Container>
     </>
