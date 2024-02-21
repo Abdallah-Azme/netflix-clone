@@ -1,13 +1,13 @@
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/navbar/Navbar";
+import "../globals.css";
+import ToastContext from "../../../context/ToastContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Rose Flex",
+  title: "Auth Rose Flex",
   description: "The best website for watching and chilling",
 };
 
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(inter.className, "")}>
-        <Navbar />
+        <ToastContext />
         {children}
       </body>
     </html>

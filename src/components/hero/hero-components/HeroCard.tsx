@@ -1,12 +1,9 @@
 import Image from "next/image";
-import { Movie } from "../../../../lib/types";
 import { baseImgUrl } from "../../../../lib/constants";
-import { Button } from "@/components/ui/button";
-import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import { Movie } from "../../../../lib/types";
+
 import Container from "@/components/commen/Container";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import MovieModal from "@/components/Category/MovieModal";
+import HeroButtons from "./HeroButtons";
 export default function HeroCard({ movie }: { movie: Movie }) {
   return (
     <>
@@ -27,19 +24,7 @@ export default function HeroCard({ movie }: { movie: Movie }) {
         </h1>
         <p className="text-base text-white max-w-80">{movie?.overview}</p>
         <div className=" flex gap-3">
-          <Dialog>
-            <DialogTrigger>
-              <Button className="px-6 py-6 mr-10">
-                <PlayCircleOutlineIcon /> Play now
-              </Button>
-              <Button className="px-6 py-6">
-                <InfoOutlinedIcon /> More info
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="w-[500px] h-[500px] md:h-[750px] md:w-[750px]">
-              <MovieModal movie={movie} />
-            </DialogContent>
-          </Dialog>
+          <HeroButtons movie={movie} />
         </div>
       </Container>
     </>

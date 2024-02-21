@@ -49,7 +49,7 @@ export default function MovieModal({ movie }: MovieModalProps) {
         <div className="flex flex-row justify-between">
           <div className="flex flex-row gap-2">
             <p className="  text-white/70">Name:</p>
-            <p className="  text-white/70">{movie.title || movie.name}:</p>
+            <p className="  text-white/70">{movie.title || movie.name}</p>
           </div>
           <div className="flex gap-3">
             <p className="">Add to list</p>

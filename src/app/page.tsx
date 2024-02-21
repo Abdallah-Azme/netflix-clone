@@ -9,7 +9,6 @@ export default async function Home() {
   const example = genres.slice(0, 2);
   return (
     <div className="text-secondary-foreground">
-      <Navbar />
       <Hero />
       <div className="">
         {example.map((genre: Genre) => (

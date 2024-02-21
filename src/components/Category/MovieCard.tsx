@@ -17,7 +17,11 @@ export default async function MovieCard({ movie }: MovieCardProps) {
           <Image
             alt="move poster"
             fill
-            src={`${baseImgUrl}${movie?.backdrop_path || movie?.poster_path}`}
+            src={
+              movie?.backdrop_path || movie?.poster_path
+                ? `${baseImgUrl}${movie?.backdrop_path || movie?.poster_path}`
+                : "/assets/no-image.jpg"
+            }
             className=" w-full h-full rounded-lg "
           />
           <div className="absolute inset-0 rounded-lg border-4 border-transparent hover:border-white"></div>

@@ -19,3 +19,12 @@ export async function fetchGenreMovie() {
 
   return genres;
 }
+
+export async function searchMovis(search: string) {
+  const data = await getApiResponse(
+    `/search/movie?query=${search}&include_adult=false`
+  );
+  const searchMovies = data.results;
+
+  return searchMovies;
+}
